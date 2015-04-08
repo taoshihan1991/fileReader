@@ -1,0 +1,6 @@
+body{
+	font-size: inherit;
+}
+.navbar-nav>li .icon{
+	margin: 5px 5px 0 0;
+}
