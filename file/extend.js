@@ -1,5 +1,5 @@
 $(function(){
-	/*创建文件*/
+	/*创建文件s*/
 	$('#createFileBtn').click(function(){
 		var fileName=$('#createFileForm #fileName').val();
 		var path=$('#createFileForm #path').val();
@@ -60,30 +60,4 @@ $(function(){
 			}
 		});
 	});
-	/*重命名文件*/
-	$('.oldRowFileName').dblclick(function(){
-		var oldFileName=$(this).html();
-		var inputStr="<input type='text' class='form-control newFileName' value='"+oldFileName+"' data-oldFileName='"+oldFileName+"'/>";
-		$(this).html('').parent('.changeFileName').find('.newRowFileName').html(inputStr);
-	});
-	$(document).on('blur','.newFileName',function(){
-		var newFileName=$(this).val();
-		var oldFileName=$(this).attr('data-oldFileName');
-		if(newFileName==oldFileName){
-			$('#smallAlert .modal-body').html("请填写新文件名称")
-			$('#smallAlert').modal('show');
-		}else{
-			$.ajax({
-				type:'POST',
-				url:'index.php?act=renameFile',
-				data:{newFileName:newFileName,oldFileName:oldFileName},
-				success:function(data){
-					$('#smallAlert .modal-body').html(data)
-					$('#smallAlert').modal('show');
-				}
-			});			
-		}
-
-	});
-
-});
+})

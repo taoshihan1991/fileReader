@@ -66,12 +66,6 @@ if($act=='doEditContent'){
 
 }
 
-/*重命名文件*/
-if($act=='renameFile'){
-  print_r($_POST);die;
-  
-  exit($info);
-}
 /**
  * 读目录函数
  */

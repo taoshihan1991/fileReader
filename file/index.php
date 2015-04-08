@@ -73,14 +73,7 @@ require 'dir.inc.php';
         </tr>
         <?php foreach ($data['file'] as $k => $row) {?>
         <tr>
-          <td>
-          <div class="changeFileName">
-             <p class="oldRowFileName"><?php echo $row['name'];?></p>
-             <p class="newRowFileName"></p>
-          </div>
-         
-
-          </td>
+          <td><?php echo $row['name'];?></td>
           <td><span class="icon icon-mid "><span class="<?php $ext=$row['type']=='dir' ?'icon-folder' : 'icon-file';echo $ext;?>"></span></span></td>
           <td><?php echo $row['size'];?></td>
           <td><span class="icon icon-mid "><span class="<?php $ico=$row['readable']==true ?'icon-play' : 'icon-pause';echo $ico;?>"></span></span></td>
@@ -153,7 +146,7 @@ require 'dir.inc.php';
           <div class="modal-body">
             <form action="index.php?act=createFile" method="post" id="createFileForm">
               <div class="form-group">
-              <div class="contentTextarea">载入中...</div>
+              <div class="contentTextarea">没有内容</div>
               </div>
             </form>
           </div>
